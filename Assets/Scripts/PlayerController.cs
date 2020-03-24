@@ -2,43 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script controls the movement of the player character
 
 public class PlayerController : MonoBehaviour
 {
 
     int speed = 10;
+    Rigidbody2D rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody2D>(); // References and accesses the Rigidbody2D that is attached to the 'Player' GameObject
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("w"))
-        {
-            transform.localEulerAngles = new Vector3(0, 0, 90);
-            transform.Translate(speed * Time.deltaTime, 0, 0);
-        }
+        float horizontal = Input.GetAxis("Horizontal"); // References and accesses the 'Horizontal' input in Unity's input manager
+        float vertical = Input.GetAxis("Vertical"); // References and accesses the 'Vertical' input in Unity's input manager
 
-        if (Input.GetKey("s"))
-        {
-            transform.localEulerAngles = new Vector3(0, 0, -90);
-            transform.Translate(speed * Time.deltaTime, 0, 0);
-        }
-
-        if (Input.GetKey("a"))
-        {
-            transform.localEulerAngles = new Vector3(0, 0, 180);
-            transform.Translate(speed * Time.deltaTime, 0, 0);
-        }
-
-        if (Input.GetKey("d"))
-        {
-            transform.localEulerAngles = new Vector3(0, 0, 0);
-            transform.Translate(speed * Time.deltaTime, 0, 0);
-        }
+        rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0); // Used to calculate what the velocity of the player will be on the X and Y axes
     }
 }
