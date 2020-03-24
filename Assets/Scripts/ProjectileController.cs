@@ -10,9 +10,10 @@ public class ProjectileController : MonoBehaviour
 
     //public Rigidbody2D ProjectilePrefab;
     //public float ShotDelay;
-    int ShootingSpeed = 100;
+    int ShootingSpeed = 10;
     int MoveSpeed = 10;
     Rigidbody2D rigidbody;
+   
    
     // Start is called before the first frame update
     void Start()
@@ -34,42 +35,42 @@ public class ProjectileController : MonoBehaviour
             Destroy(GetComponent<BoxCollider2D>());
         }
 
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        //float horizontal = Input.GetAxis("Horizontal"); // References and accesses the 'Horizontal' input in Unity's input manager
+        //float vertical = Input.GetAxis("Vertical"); // References and accesses the 'Vertical' input in Unity's input manager
 
-        rigidbody.velocity = new Vector3(horizontal * MoveSpeed, vertical * MoveSpeed, 0);
+        //rigidbody.velocity = new Vector3(horizontal * MoveSpeed, vertical * MoveSpeed, 0); // Used to calculate what the moving velocity of the projectile will be on the X and Y axes
 
-        float ShootHorizontal = Input.GetAxis("ShootHorizontal");
-        float ShootVertical = Input.GetAxis("ShootVertical");
+        float ShootHorizontal = Input.GetAxis("ShootHorizontal"); // References and accesses the 'ShootHorizontal' input in Unity's input manager
+        float ShootVertical = Input.GetAxis("ShootVertical"); // References and accesses the 'ShootVertical' input in Unity's input manager
 
-        rigidbody.velocity = new Vector3(ShootHorizontal * ShootingSpeed, ShootVertical * ShootingSpeed, 0);
-
+        rigidbody.velocity = new Vector3(ShootHorizontal * ShootingSpeed, ShootVertical * ShootingSpeed, 0); // Used to calculate what the shooting velocity of the projectile will be on the X and Y axes
+        
         //if (Input.GetKeyDown("ShootHorizontal"))
         //{
-            //transform.localEulerAngles = new Vector3(0, 0, 90);
-            //transform.Translate(ShootingSpeed * Time.deltaTime, 0, 0);
-            //DestroyObjectDelayed();
+        //transform.localEulerAngles = new Vector3(0, 0, 90);
+        //transform.Translate(ShootingSpeed * Time.deltaTime, 0, 0);
+        //DestroyObjectDelayed();
         //}
 
         //if (Input.GetKeyDown("ShootVertical"))
         //{ 
-            //transform.localEulerAngles = new Vector3(0, 0, -90);
-            //transform.Translate(ShootingSpeed * Time.deltaTime, 0, 0);
-            //DestroyObjectDelayed();
+        //transform.localEulerAngles = new Vector3(0, 0, -90);
+        //transform.Translate(ShootingSpeed * Time.deltaTime, 0, 0);
+        //DestroyObjectDelayed();
         //}
 
         //if (Input.GetKeyDown("left"))
         //{ 
-            //transform.localEulerAngles = new Vector3(0, 0, 180);
-            //transform.Translate(ShootingSpeed * Time.deltaTime, 0, 0);
-            //DestroyObjectDelayed();
+        //transform.localEulerAngles = new Vector3(0, 0, 180);
+        //transform.Translate(ShootingSpeed * Time.deltaTime, 0, 0);
+        //DestroyObjectDelayed();
         //}
 
         //if (Input.GetKeyDown("right"))
         //{
-            //transform.localEulerAngles = new Vector3(0, 0, 0);
-            //transform.Translate(ShootingSpeed * Time.deltaTime, 0, 0);
-            //DestroyObjectDelayed();
+        //transform.localEulerAngles = new Vector3(0, 0, 0);
+        //transform.Translate(ShootingSpeed * Time.deltaTime, 0, 0);
+        //DestroyObjectDelayed();
         //} 
     }
 
