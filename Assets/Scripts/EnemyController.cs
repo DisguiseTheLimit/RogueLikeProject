@@ -16,10 +16,10 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TargetPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); // Used to find what GameObject has the tag "Player" and then references that GameObject's 
+        TargetPlayer = GameObject.FindWithTag("Player").GetComponent<Transform>(); // Used to find what GameObject has the tag "Player" and then references that GameObject's 
                                                                                              // transform position
 
-        Projectile = GameObject.FindGameObjectWithTag("Projectile").GetComponent<Transform>(); // Used to find what GameObject has the tag "Projectile" and then references that GameObject's 
+        Projectile = GameObject.FindWithTag("Projectile").GetComponent<Transform>(); // Used to find what GameObject has the tag "Projectile" and then references that GameObject's 
                                                                                                // transform position 
     }
 
@@ -36,7 +36,9 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (Vector2.Distance(transform.position, TargetPlayer.position) < 1)
+        if (Vector2.Distance(transform.position, TargetPlayer.position) < 1) // If the distance between the enemy and player is less than 1 and if the bool "AttackDelay" is false
+                                                                             // execute the "DamagePlayer" function from the PlayerController script passing 1 as the damage value
+                                                                             // then after this execute the function "StartDelay"
         {
             if (!AttackDelay)
             PlayerController.DamagePlayer(1);
@@ -44,8 +46,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private IEnumerator StartDelay()
-    {
+    private IEnumerator StartDelay() // Sets the bool "AttackDelay" to true, then waits for a certain amount of seconds which is specified in the inspector in unity, then sets 
+                                     // the bool "AttackDelay" to false
+    {                                       
         AttackDelay = true;
         yield return new WaitForSeconds(Delay);
         AttackDelay = false;

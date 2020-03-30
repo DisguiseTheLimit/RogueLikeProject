@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public int speed;
     public int RotationSpeed;
     Rigidbody2D rigidbody;
-    Transform Enemy;
+    //Transform Enemy;
     public static int health = 6;
     public static int MaximumHealth = 6;
 
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
+        //Enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
 
         rigidbody = GetComponent<Rigidbody2D>(); // References and accesses the Rigidbody2D that is attached to the 'Player' GameObject
     }
@@ -34,42 +34,42 @@ public class PlayerController : MonoBehaviour
 
         rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0); // Used to calculate what the velocity of the player will be on the X and Y axes
 
-        if (Input.GetKey (KeyCode.W))
+        if (Input.GetKey (KeyCode.W)) // If "W" key is pressed the Player's rigidbody rotates to the 0 coordinate in accordance with the rotation speed that is set.
         {
             rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, 0, RotationSpeed * Time.deltaTime));
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A)) // If "A" key is pressed the Player's rigidbody rotates to the 90 coordinate in accordance with the rotation speed that is set.
         {
             rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, 90, RotationSpeed * Time.deltaTime));
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S)) // If "S" key is pressed the Player's rigidbody rotates to the 180 coordinate in accordance with the rotation speed that is set.
         {
             rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, 180, RotationSpeed * Time.deltaTime));
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D)) // If "D" key is pressed the Player's rigidbody rotates to the -90 coordinate in accordance with the rotation speed that is set.
         {
             rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, -90, RotationSpeed * Time.deltaTime));
         }
 
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D)) // If "W" and "D" keys are pressed the Player's rigidbody rotates to the -45 coordinate in accordance with the rotation speed that is set.
         {
             rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, -45, RotationSpeed * Time.deltaTime));
         }
 
-        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)) // If "S" and "D" keys are pressed the Player's rigidbody rotates to the -135 coordinate in accordance with the rotation speed that is set.
         {
             rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, -135, RotationSpeed * Time.deltaTime));
         }
 
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S)) // If "A" and "S" keys are pressed the Player's rigidbody rotates to the -225 coordinate in accordance with the rotation speed that is set.
         {
             rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, -225, RotationSpeed * Time.deltaTime));
         }
 
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W)) // If "A" and "W" keys are pressed the Player's rigidbody rotates to the -315 coordinate in accordance with the rotation speed that is set.
         {
             rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, -315, RotationSpeed * Time.deltaTime));
         }
@@ -77,9 +77,9 @@ public class PlayerController : MonoBehaviour
 
     public static void DamagePlayer(int damage)
     {
-        health -= damage;
+        health -= damage; // The "health" int variable is minused by the "damage" int variable.
 
-        if (Health <= 0)
+        if (Health <= 0) // If the "Health" int variable is less than or equal to 0 execute "KillPlayer".
         {
             KillPlayer();
         }
@@ -92,6 +92,6 @@ public class PlayerController : MonoBehaviour
 
     public static void HealPlayer(int HealAmount)
     {
-        health = Mathf.Min(MaxHealth, health + HealAmount);
+        health = Mathf.Min(MaxHealth, health + HealAmount); // 
     }
 }
