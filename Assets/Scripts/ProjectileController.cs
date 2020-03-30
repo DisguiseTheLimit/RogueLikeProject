@@ -11,8 +11,11 @@ public class ProjectileController : MonoBehaviour
     //public Rigidbody2D ProjectilePrefab;
     //public float ShotDelay;
     int ShootingSpeed = 10;
-    int MoveSpeed = 10;
+    public float MoveSpeed = 10.0f;
     Rigidbody2D rigidbody;
+    public GameObject projectile;
+    bool AlreadyExecuted = false;
+    //bool ObjectDestroyed = false;
    
    
     // Start is called before the first frame update
@@ -45,6 +48,50 @@ public class ProjectileController : MonoBehaviour
 
         rigidbody.velocity = new Vector3(ShootHorizontal * ShootingSpeed, ShootVertical * ShootingSpeed, 0); // Used to calculate what the shooting velocity of the projectile will be on the X and Y axes
         
+        //transform.Rotate(0, -Input.GetAxis("Horizontal") * MoveSpeed, 0);
+
+        // if (Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") > 0 && !AlreadyExecuted)
+        //{
+        //transform.Rotate(0, 0, 90);
+        //AlreadyExecuted = true;
+        //DestroyObjectDelayed();
+
+        //}
+
+
+        //if (projectile.transform.position.y < 0 && !AlreadyExecuted)
+        //{
+        //transform.Rotate(0, 0, -90);
+        //AlreadyExecuted = true;
+        //DestroyObjectDelayed();
+
+        //}
+
+
+        //if (projectile.transform.position.x > 0 && !AlreadyExecuted)
+        //{
+        //transform.Rotate(0, 0, 0);
+        //AlreadyExecuted = true;
+        //DestroyObjectDelayed();
+
+        //}
+
+
+        //if (projectile.transform.position.x < 0 && !AlreadyExecuted)
+        //{
+        //transform.Rotate(0, 0, 180);
+        //AlreadyExecuted = true;
+        //DestroyObjectDelayed();
+
+        //}
+
+
+        //if (ObjectDestroyed && AlreadyExecuted)
+        //{
+        //Instantiate(gameObject);
+        //AlreadyExecuted = false;
+        //}
+
         //if (Input.GetKeyDown("ShootHorizontal"))
         //{
         //transform.localEulerAngles = new Vector3(0, 0, 90);
@@ -76,22 +123,23 @@ public class ProjectileController : MonoBehaviour
 
     //void DespawnProjectile()
     //{
-        //Destroy(gameObject);
+    //Destroy(gameObject);
     //}
 
-   //void DespawnScriptInstance()
+    //void DespawnScriptInstance()
     //{
-        //Destroy(this);
+    //Destroy(this);
     //}
 
     //void DestroyComponent()
     //{
-        //Destroy(GetComponent<Rigidbody2D>());
+    //Destroy(GetComponent<Rigidbody2D>());
     //}
 
     void DestroyObjectDelayed() // Destroys the 'Projectile' GameObject 1 second after this function is executed
     {
         Destroy(gameObject, 1);
+        //ObjectDestroyed = true;
         
     }
 }

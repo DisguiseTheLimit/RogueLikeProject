@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
     public int speed;
     Transform TargetPlayer;
     Transform Projectile;
+    private bool AttackDelay = false;
+    public float Delay;
 
     // Start is called before the first frame update
     void Start()
@@ -33,5 +35,19 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (Vector2.Distance(transform.position, TargetPlayer.position) < 1)
+        {
+            if (!AttackDelay)
+            PlayerController.DamagePlayer(1);
+            StartCoroutine(StartDelay());
+        }
+    }
+
+    private IEnumerator StartDelay()
+    {
+        AttackDelay = true;
+        yield return new WaitForSeconds(Delay);
+        AttackDelay = false;
     }
 }
