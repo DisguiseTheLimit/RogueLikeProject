@@ -5,21 +5,18 @@ using UnityEngine.UI;
 
 public class HealthUIController : MonoBehaviour
 {
-
-    public GameObject heart;
-    private float HeartFill;
-
-    // Start is called before the first frame update
+    [SerializeField]
+    Image heart;
+        
     void Start()
     {
-        
+        PlayerController player = StageManager.Instance.Player;
+
+        player.HealthChanged += PlayerHealthChanged;
     }
 
-    // Update is called once per frame
-    void Update()
+    void PlayerHealthChanged(PlayerController player)
     {
-        HeartFill = (float)PlayerController.Health;
-        HeartFill = HeartFill / PlayerController.MaxHealth;
-        heart.GetComponent<Image>().fillAmount = HeartFill;
+        heart.fillAmount = (float)player.Health / player.MaxHealth;
     }
 }

@@ -5,18 +5,24 @@ using UnityEngine.UI;
 
 // This script controls the movement of the player character
 
+public delegate void PlayerEventHandler(PlayerController controller);
+
 public class PlayerController : MonoBehaviour
 {
+    public int Health => health; 
+    public int MaxHealth => maximumHealth;
+
+    public Vector2 Position => transform.position;
 
     public int speed;
     public int RotationSpeed;
     Rigidbody2D rigidbody;
     //Transform Enemy;
-    public static int health = 6;
-    public static int MaximumHealth = 6;
+    public int health = 6;
+    public int maximumHealth = 6;
 
-    public static int Health { get => health; set => health = value; }
-    public static int MaxHealth { get => MaximumHealth; set => MaximumHealth = value; }
+    public event PlayerEventHandler HealthChanged;
+    public event PlayerEventHandler Killed;
 
     // Start is called before the first frame update
     void Start()
@@ -75,9 +81,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public static void DamagePlayer(int damage)
+    public void DamagePlayer(int damage)
     {
         health -= damage; // The "health" int variable is minused by the "damage" int variable.
+
+        HealthChanged?.Invoke(this);
 
         if (Health <= 0) // If the "Health" int variable is less than or equal to 0 execute "KillPlayer".
         {
@@ -85,13 +93,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public static void KillPlayer()
+    public void KillPlayer()
     {
-
+        Killed?.Invoke(this);
     }
 
-    public static void HealPlayer(int HealAmount)
+    public void HealPlayer(int HealAmount)
     {
         health = Mathf.Min(MaxHealth, health + HealAmount); // 
+
+        HealthChanged?.Invoke(this);
     }
 }
