@@ -11,13 +11,17 @@ public class EnemyController : MonoBehaviour
     
     public float delay;
 
+    public float meleeDelayTime;
+
     public int health;
     public int maxHealth;
 
     PlayerController targetPlayer;
 
     //Transform projectile;
+    Transform meleeTag;
     bool attackDelay = false;
+    bool meleeDelay = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +29,12 @@ public class EnemyController : MonoBehaviour
         targetPlayer = StageManager.Instance.Player;
 
         //targetPlayer = GameObject.FindWithTag("Player").GetComponent<Transform>(); // Used to find what GameObject has the tag "Player" and then references that GameObject's 
-                                                                                   // transform position
+        // transform position
 
         //projectile = GameObject.FindWithTag("Projectile").GetComponent<Transform>(); // Used to find what GameObject has the tag "Projectile" and then references that GameObject's 
-                                                                                     // transform position 
+        // transform position 
+
+        meleeTag = GameObject.FindWithTag("Melee").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -59,6 +65,25 @@ public class EnemyController : MonoBehaviour
                 StartCoroutine(StartDelay());
             }
         }
+
+        if (Input.GetMouseButton(1))
+        {
+
+            if (Vector2.Distance(transform.position, meleeTag.position) < 1 && health <= maxHealth)
+            {
+                if (!meleeDelay)
+                {
+                    health--;
+                    StartCoroutine(MeleeStartDelay());
+                }
+            }
+
+            if (Vector2.Distance(transform.position, meleeTag.position) < 1 && health == 0)
+            {
+                Destroy(gameObject);
+            }
+
+        }
     }
 
     IEnumerator StartDelay() // Sets the bool "AttackDelay" to true, then waits for a certain amount of seconds which is specified in the inspector in unity, then sets 
@@ -67,5 +92,12 @@ public class EnemyController : MonoBehaviour
         attackDelay = true;
         yield return new WaitForSeconds(delay);
         attackDelay = false;
+    }
+
+    IEnumerator MeleeStartDelay()
+    {
+        meleeDelay = true;
+        yield return new WaitForSeconds(meleeDelayTime);
+        meleeDelay = false;
     }
 }
