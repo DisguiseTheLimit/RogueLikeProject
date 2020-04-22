@@ -10,12 +10,12 @@ public class HealthUIController : MonoBehaviour
         
     void Start()
     {
-        PlayerController player = StageManager.Instance.Player;
+        HealthController player = StageManager.Instance.Player;
 
         player.HealthChanged += PlayerHealthChanged;
     }
 
-    void PlayerHealthChanged(PlayerController player)
+    void PlayerHealthChanged(HealthController player)
     {
         heart.fillAmount = (float)player.Health / player.MaxHealth;
     }

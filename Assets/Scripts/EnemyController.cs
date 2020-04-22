@@ -16,10 +16,11 @@ public class EnemyController : MonoBehaviour
     public int health;
     public int maxHealth;
 
-    PlayerController targetPlayer;
+    HealthController targetPlayer;
 
     //Transform projectile;
     Transform meleeTag;
+    Transform projectileTag;
     bool attackDelay = false;
     bool meleeDelay = false;
 
@@ -35,6 +36,8 @@ public class EnemyController : MonoBehaviour
         // transform position 
 
         meleeTag = GameObject.FindWithTag("Melee").GetComponent<Transform>();
+
+        projectileTag = GameObject.FindWithTag("Projectile").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -83,6 +86,16 @@ public class EnemyController : MonoBehaviour
                 Destroy(gameObject);
             }
 
+        }
+
+        if (Vector2.Distance(transform.position, projectileTag.position) < 1 && health <= maxHealth)
+        {
+            health--;
+        }
+
+        if (Vector2.Distance(transform.position, projectileTag.position) < 1 && health == 0)
+        {
+            Destroy(gameObject);
         }
     }
 

@@ -4,7 +4,7 @@ public class StageDebugger : MonoBehaviour
 {
     void OnEnable()
     {
-        PlayerController player = StageManager.Instance.Player;
+        HealthController player = StageManager.Instance.Player;
 
         player.HealthChanged += PlayerHealthChanged;
         player.Killed += PlayerKilled;
@@ -12,18 +12,18 @@ public class StageDebugger : MonoBehaviour
 
     void OnDisable()
     {
-        PlayerController player = StageManager.Instance.Player;
+        HealthController player = StageManager.Instance.Player;
 
         player.HealthChanged -= PlayerHealthChanged;
         player.Killed -= PlayerKilled;
     }
 
-    void PlayerHealthChanged(PlayerController controller)
+    void PlayerHealthChanged(HealthController controller)
     {
         Debug.Log($"{controller.name} health changed to {controller.Health}");
     }
 
-    void PlayerKilled(PlayerController controller)
+    void PlayerKilled(HealthController controller)
     {
         Debug.Log($"{controller.name} killed");
     }

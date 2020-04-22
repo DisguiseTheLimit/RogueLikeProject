@@ -4,10 +4,10 @@ public class StageManager : MonoBehaviour
 {
     public static StageManager Instance { get; private set; }
 
-    public PlayerController Player => player;
+    public HealthController Player => player;
 
     [SerializeField]
-    PlayerController player;
+    HealthController player;
 
     void Awake()
     {

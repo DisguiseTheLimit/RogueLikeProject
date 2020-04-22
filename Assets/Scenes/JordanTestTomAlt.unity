@@ -358,7 +358,7 @@ PrefabInstance:
     - target: {fileID: 1689324068009168255, guid: 1aee3df85fe6f5440baf0ced1fd4aa1a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2337382888554901076, guid: 1aee3df85fe6f5440baf0ced1fd4aa1a,
         type: 3}
@@ -5459,6 +5459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   RotationSpeed: 0
+  health: 6
+  maximumHealth: 6
 --- !u!61 &1079155418
 BoxCollider2D:
   m_ObjectHideFlags: 0
