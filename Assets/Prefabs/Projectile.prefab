@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 10
   rb: {fileID: 9149826202325133560}
+  collider: {fileID: 7163889043221459155}
   damage: 1
 --- !u!50 &9149826202325133560
 Rigidbody2D:

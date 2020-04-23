@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// This script controls the movement of the player character
-
 public class PlayerController : MonoBehaviour
 {
     public float speed;
@@ -27,9 +25,8 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Move(Vector2 moveInput)
     {
-        Vector2 moveInput = new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxis("Vertical"));
         moveVelocity = moveInput.normalized * speed;
 
         //rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0); // Used to calculate what the velocity of the player will be on the X and Y axes

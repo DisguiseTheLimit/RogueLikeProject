@@ -5,25 +5,30 @@ using UnityEngine;
 public class ProjectileDespawning : MonoBehaviour
 {
 
-    Transform projectileTagWall;
-    Transform projectileTagDoor;
+    //Transform projectileTagWall;
+    //Transform projectileTagDoor;
 
-    void Start()
+    //void Start()
+    //{
+    //    projectileTagWall = GameObject.FindWithTag("Wall").GetComponent<Transform>();
+    //    projectileTagDoor = GameObject.FindWithTag("Door").GetComponent<Transform>(); 
+    //}
+
+    //void Update()
+    //{
+    //    if (Vector2.Distance(transform.position, projectileTagWall.position) < 1)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+
+    //    if (Vector2.Distance(transform.position, projectileTagDoor.position) < 1)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        projectileTagWall = GameObject.FindWithTag("Wall").GetComponent<Transform>();
-        projectileTagDoor = GameObject.FindWithTag("Door").GetComponent<Transform>();
-    }
-
-    void Update()
-    {
-        if (Vector2.Distance(transform.position, projectileTagWall.position) < 1)
-        {
-            Destroy(gameObject);
-        }
-
-        if (Vector2.Distance(transform.position, projectileTagDoor.position) < 1)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

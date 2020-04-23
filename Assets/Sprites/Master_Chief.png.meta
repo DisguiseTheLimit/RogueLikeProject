@@ -409,7 +409,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -421,7 +421,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -435,10 +435,10 @@ TextureImporter:
       name: Master_Chief_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 258
-        width: 14
-        height: 20
+        x: 0
+        y: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -456,10 +456,10 @@ TextureImporter:
       name: Master_Chief_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 258
-        width: 14
-        height: 20
+        x: 32
+        y: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -477,10 +477,10 @@ TextureImporter:
       name: Master_Chief_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 258
-        width: 14
-        height: 20
+        x: 64
+        y: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -498,10 +498,10 @@ TextureImporter:
       name: Master_Chief_3
       rect:
         serializedVersion: 2
-        x: 105
-        y: 258
-        width: 13
-        height: 20
+        x: 96
+        y: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -519,10 +519,10 @@ TextureImporter:
       name: Master_Chief_4
       rect:
         serializedVersion: 2
-        x: 137
-        y: 258
-        width: 13
-        height: 20
+        x: 128
+        y: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,10 +540,10 @@ TextureImporter:
       name: Master_Chief_5
       rect:
         serializedVersion: 2
-        x: 169
-        y: 258
-        width: 13
-        height: 20
+        x: 160
+        y: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -561,10 +561,10 @@ TextureImporter:
       name: Master_Chief_6
       rect:
         serializedVersion: 2
-        x: 201
-        y: 258
-        width: 13
-        height: 20
+        x: 192
+        y: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -582,10 +582,10 @@ TextureImporter:
       name: Master_Chief_7
       rect:
         serializedVersion: 2
-        x: 233
-        y: 258
-        width: 13
-        height: 20
+        x: 224
+        y: 256
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -603,10 +603,10 @@ TextureImporter:
       name: Master_Chief_8
       rect:
         serializedVersion: 2
-        x: 9
-        y: 226
-        width: 14
-        height: 20
+        x: 0
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -624,10 +624,10 @@ TextureImporter:
       name: Master_Chief_9
       rect:
         serializedVersion: 2
-        x: 41
-        y: 226
-        width: 14
-        height: 21
+        x: 32
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -645,10 +645,10 @@ TextureImporter:
       name: Master_Chief_10
       rect:
         serializedVersion: 2
-        x: 72
-        y: 226
-        width: 15
-        height: 20
+        x: 64
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -666,10 +666,10 @@ TextureImporter:
       name: Master_Chief_11
       rect:
         serializedVersion: 2
-        x: 103
-        y: 226
-        width: 16
-        height: 20
+        x: 96
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -687,10 +687,10 @@ TextureImporter:
       name: Master_Chief_12
       rect:
         serializedVersion: 2
-        x: 137
-        y: 226
-        width: 14
-        height: 21
+        x: 128
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -708,10 +708,10 @@ TextureImporter:
       name: Master_Chief_13
       rect:
         serializedVersion: 2
-        x: 169
-        y: 226
-        width: 14
-        height: 20
+        x: 160
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -729,10 +729,10 @@ TextureImporter:
       name: Master_Chief_14
       rect:
         serializedVersion: 2
-        x: 9
-        y: 194
-        width: 14
-        height: 20
+        x: 0
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -750,10 +750,10 @@ TextureImporter:
       name: Master_Chief_15
       rect:
         serializedVersion: 2
-        x: 41
-        y: 194
-        width: 14
-        height: 21
+        x: 32
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -771,10 +771,10 @@ TextureImporter:
       name: Master_Chief_16
       rect:
         serializedVersion: 2
-        x: 72
-        y: 194
-        width: 15
-        height: 20
+        x: 64
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -792,10 +792,10 @@ TextureImporter:
       name: Master_Chief_17
       rect:
         serializedVersion: 2
-        x: 103
-        y: 194
-        width: 16
-        height: 20
+        x: 96
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -813,10 +813,10 @@ TextureImporter:
       name: Master_Chief_18
       rect:
         serializedVersion: 2
-        x: 137
-        y: 194
-        width: 14
-        height: 21
+        x: 128
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -834,10 +834,10 @@ TextureImporter:
       name: Master_Chief_19
       rect:
         serializedVersion: 2
-        x: 169
-        y: 194
-        width: 14
-        height: 20
+        x: 160
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -855,10 +855,10 @@ TextureImporter:
       name: Master_Chief_20
       rect:
         serializedVersion: 2
-        x: 10
-        y: 162
-        width: 13
-        height: 20
+        x: 0
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -876,10 +876,10 @@ TextureImporter:
       name: Master_Chief_21
       rect:
         serializedVersion: 2
-        x: 41
-        y: 162
-        width: 14
-        height: 21
+        x: 32
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -897,10 +897,10 @@ TextureImporter:
       name: Master_Chief_22
       rect:
         serializedVersion: 2
-        x: 72
-        y: 162
-        width: 15
-        height: 20
+        x: 64
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -918,10 +918,10 @@ TextureImporter:
       name: Master_Chief_23
       rect:
         serializedVersion: 2
-        x: 103
-        y: 162
-        width: 16
-        height: 20
+        x: 96
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -939,10 +939,10 @@ TextureImporter:
       name: Master_Chief_24
       rect:
         serializedVersion: 2
-        x: 138
-        y: 162
-        width: 13
-        height: 21
+        x: 128
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -960,10 +960,10 @@ TextureImporter:
       name: Master_Chief_25
       rect:
         serializedVersion: 2
-        x: 170
-        y: 162
-        width: 13
-        height: 20
+        x: 160
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -981,10 +981,10 @@ TextureImporter:
       name: Master_Chief_26
       rect:
         serializedVersion: 2
-        x: 9
-        y: 130
-        width: 13
-        height: 20
+        x: 0
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1002,10 +1002,10 @@ TextureImporter:
       name: Master_Chief_27
       rect:
         serializedVersion: 2
-        x: 41
-        y: 130
-        width: 13
-        height: 21
+        x: 32
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1023,10 +1023,10 @@ TextureImporter:
       name: Master_Chief_28
       rect:
         serializedVersion: 2
-        x: 72
-        y: 130
-        width: 14
-        height: 20
+        x: 64
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1044,10 +1044,10 @@ TextureImporter:
       name: Master_Chief_29
       rect:
         serializedVersion: 2
-        x: 101
-        y: 130
-        width: 17
-        height: 20
+        x: 96
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1065,10 +1065,10 @@ TextureImporter:
       name: Master_Chief_30
       rect:
         serializedVersion: 2
-        x: 137
-        y: 130
-        width: 13
-        height: 21
+        x: 128
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1086,10 +1086,10 @@ TextureImporter:
       name: Master_Chief_31
       rect:
         serializedVersion: 2
-        x: 169
-        y: 130
-        width: 15
-        height: 20
+        x: 160
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1107,10 +1107,10 @@ TextureImporter:
       name: Master_Chief_32
       rect:
         serializedVersion: 2
-        x: 9
-        y: 98
-        width: 14
-        height: 21
+        x: 0
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1128,10 +1128,10 @@ TextureImporter:
       name: Master_Chief_33
       rect:
         serializedVersion: 2
-        x: 41
-        y: 98
-        width: 15
-        height: 20
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1149,10 +1149,10 @@ TextureImporter:
       name: Master_Chief_34
       rect:
         serializedVersion: 2
-        x: 73
-        y: 98
-        width: 16
-        height: 20
+        x: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1170,10 +1170,10 @@ TextureImporter:
       name: Master_Chief_35
       rect:
         serializedVersion: 2
-        x: 105
-        y: 98
-        width: 13
-        height: 21
+        x: 96
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1191,10 +1191,10 @@ TextureImporter:
       name: Master_Chief_36
       rect:
         serializedVersion: 2
-        x: 137
-        y: 98
-        width: 13
-        height: 20
+        x: 128
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1212,10 +1212,10 @@ TextureImporter:
       name: Master_Chief_37
       rect:
         serializedVersion: 2
-        x: 9
-        y: 66
-        width: 14
-        height: 21
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1233,10 +1233,10 @@ TextureImporter:
       name: Master_Chief_38
       rect:
         serializedVersion: 2
-        x: 41
-        y: 66
-        width: 15
-        height: 20
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1254,10 +1254,10 @@ TextureImporter:
       name: Master_Chief_39
       rect:
         serializedVersion: 2
-        x: 73
-        y: 66
-        width: 16
-        height: 20
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1275,10 +1275,10 @@ TextureImporter:
       name: Master_Chief_40
       rect:
         serializedVersion: 2
-        x: 105
-        y: 66
-        width: 13
-        height: 21
+        x: 96
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1296,10 +1296,10 @@ TextureImporter:
       name: Master_Chief_41
       rect:
         serializedVersion: 2
-        x: 137
-        y: 66
-        width: 13
-        height: 20
+        x: 128
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1317,10 +1317,10 @@ TextureImporter:
       name: Master_Chief_42
       rect:
         serializedVersion: 2
-        x: 9
-        y: 34
-        width: 14
-        height: 21
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1338,10 +1338,10 @@ TextureImporter:
       name: Master_Chief_43
       rect:
         serializedVersion: 2
-        x: 41
-        y: 34
-        width: 15
-        height: 20
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1359,10 +1359,10 @@ TextureImporter:
       name: Master_Chief_44
       rect:
         serializedVersion: 2
-        x: 73
-        y: 34
-        width: 16
-        height: 20
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1380,10 +1380,10 @@ TextureImporter:
       name: Master_Chief_45
       rect:
         serializedVersion: 2
-        x: 105
-        y: 34
-        width: 13
-        height: 21
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1401,10 +1401,10 @@ TextureImporter:
       name: Master_Chief_46
       rect:
         serializedVersion: 2
-        x: 137
-        y: 34
-        width: 13
-        height: 20
+        x: 128
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1422,10 +1422,10 @@ TextureImporter:
       name: Master_Chief_47
       rect:
         serializedVersion: 2
-        x: 8
-        y: 2
-        width: 14
-        height: 20
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1443,10 +1443,10 @@ TextureImporter:
       name: Master_Chief_48
       rect:
         serializedVersion: 2
-        x: 40
-        y: 2
-        width: 14
-        height: 21
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1464,10 +1464,10 @@ TextureImporter:
       name: Master_Chief_49
       rect:
         serializedVersion: 2
-        x: 72
-        y: 2
-        width: 14
-        height: 20
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1485,10 +1485,10 @@ TextureImporter:
       name: Master_Chief_50
       rect:
         serializedVersion: 2
-        x: 101
-        y: 2
-        width: 17
-        height: 20
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1506,10 +1506,10 @@ TextureImporter:
       name: Master_Chief_51
       rect:
         serializedVersion: 2
-        x: 136
-        y: 2
-        width: 14
-        height: 21
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1527,10 +1527,10 @@ TextureImporter:
       name: Master_Chief_52
       rect:
         serializedVersion: 2
-        x: 168
-        y: 2
-        width: 16
-        height: 20
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
