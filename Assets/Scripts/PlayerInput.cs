@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 // This script controls the movement of the player character
 
-
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField]
@@ -19,6 +18,5 @@ public class PlayerInput : MonoBehaviour
         {
             projectileShooter.TryShoot();
         }
-
     }
 }

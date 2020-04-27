@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2337382888554901076}
   - component: {fileID: 417797437448513888}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,8 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1951679541
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9075425501099247478, guid: f268c7d6d22279c46b5f088a94d56dfd,
-    type: 3}
+  m_Sprite: {fileID: 632961001475128381, guid: 0c134f35ae9b1a240a0a06f8f3f154f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,14 +101,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.03, y: 6.33}
+    oldSize: {x: 5.02, y: 3.72}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.03, y: 6.33}
+  m_Size: {x: 5.02, y: 3.72}
   m_EdgeRadius: 0
 --- !u!114 &2337382888554901076
 MonoBehaviour:
@@ -123,11 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f97bd71e5e7ff44eae340d0aaab4457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  delay: 2
+  speed: 3
+  delay: 1
   meleeDelayTime: 1
-  health: 3
-  maxHealth: 3
+  health: 2
+  maxHealth: 2
 --- !u!50 &417797437448513888
 Rigidbody2D:
   serializedVersion: 4

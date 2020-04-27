@@ -16,6 +16,8 @@ public class ProjectileShooter : MonoBehaviour
 
     private float spawnTime;
 
+    public AudioSource gunShot;
+
     void Spawn(Vector3 positionSpawn, Quaternion rotateSpawn)
     {
         ProjectileMovement spawned = Instantiate(projectile, positionSpawn, rotateSpawn);
@@ -30,11 +32,11 @@ public class ProjectileShooter : MonoBehaviour
     {
         if(Time.time >= spawnTime)
         {
+            gunShot.Play();
             Spawn(transform.position, transform.rotation);
             spawnTime = Time.time + fireRate;
             return true;
         }
-
         return false;
     }
 }

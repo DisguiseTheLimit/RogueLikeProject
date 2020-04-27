@@ -69,9 +69,8 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
-
             if (Vector2.Distance(transform.position, meleeTag.position) < 1 && health <= maxHealth)
             {
                 if (!meleeDelay)
@@ -85,7 +84,6 @@ public class EnemyController : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-
         }
 
         if (Vector2.Distance(transform.position, projectileTag.position) < 1 && health <= maxHealth)
