@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Projectile
   - Enemy
+  - Melee
+  - Wall
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Wall
   - 
   - 
   - 
@@ -45,6 +48,9 @@ TagManager:
     locked: 0
   - name: Projectile
     uniqueID: 3961874383
+    locked: 0
+  - name: Enemy
+    uniqueID: 1951679541
     locked: 0
   - name: Player
     uniqueID: 1102509671
