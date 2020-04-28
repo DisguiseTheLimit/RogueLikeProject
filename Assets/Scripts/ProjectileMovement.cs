@@ -25,23 +25,11 @@ public class ProjectileMovement : MonoBehaviour
         Physics2D.IgnoreCollision(collider, other);
     }
 
-    //void OnCollisionEnter(Collision other)
-    //{
-    //if (other.gameObject.tag == "Wall")
-    //{
-    //Destroy(gameObject);
-    //}
-    //}
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-        //WallController wallcontroller = collision.gameObject.GetComponent<WallController>();
-
-        //if (wallcontroller != null)
-        //{
-            //wallcontroller.TakeDamage(damage);
-        //}
-
-        //Destroy(gameObject);
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyController>().TakeDamage(1);
+        }
+    }
 }

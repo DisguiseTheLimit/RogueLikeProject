@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 // This script controls the enemy character's AI
 
 public class EnemyController : MonoBehaviour
@@ -18,9 +17,7 @@ public class EnemyController : MonoBehaviour
 
     HealthController targetPlayer;
 
-    //Transform projectile;
     Transform meleeTag;
-    Transform projectileTag;
     bool attackDelay = false;
     bool meleeDelay = false;
 
@@ -32,12 +29,7 @@ public class EnemyController : MonoBehaviour
         //targetPlayer = GameObject.FindWithTag("Player").GetComponent<Transform>(); // Used to find what GameObject has the tag "Player" and then references that GameObject's 
         // transform position
 
-        //projectile = GameObject.FindWithTag("Projectile").GetComponent<Transform>(); // Used to find what GameObject has the tag "Projectile" and then references that GameObject's 
-        // transform position 
-
         meleeTag = GameObject.FindWithTag("Melee").GetComponent<Transform>();
-
-        projectileTag = GameObject.FindWithTag("Projectile").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -47,16 +39,6 @@ public class EnemyController : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPlayer.Position, speed * Time.deltaTime); // by using enemy's and player's position and speed to calculate
         }
-
-        //if (Vector2.Distance(transform.position, projectile.position) < 1 && health <= maxHealth) // If the distance between the enemy and the projectile is less than 1 destroy the enemy
-        //{
-        //    health--;
-        //}
-
-        //if (Vector2.Distance(transform.position, projectile.position) < 1 && health == 0) // If the distance between the enemy and the projectile is less than 1 destroy the enemy
-        //{
-        //    Destroy(gameObject);
-        //}
 
         if (Vector2.Distance(transform.position, targetPlayer.Position) < 1) // If the distance between the enemy and player is less than 1 and if the bool "AttackDelay" is false
                                                                              // execute the "DamagePlayer" function from the PlayerController script passing 1 as the damage value
@@ -85,13 +67,8 @@ public class EnemyController : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-        if (Vector2.Distance(transform.position, projectileTag.position) < 1 && health <= maxHealth)
-        {
-            health--;
-        }
-
-        if (Vector2.Distance(transform.position, projectileTag.position) < 1 && health == 0)
+        
+        if (health == 0)
         {
             Destroy(gameObject);
         }
@@ -110,5 +87,10 @@ public class EnemyController : MonoBehaviour
         meleeDelay = true;
         yield return new WaitForSeconds(meleeDelayTime);
         meleeDelay = false;
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        health -= damageAmount;
     }
 }
