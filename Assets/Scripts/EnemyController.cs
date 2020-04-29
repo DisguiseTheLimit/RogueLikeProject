@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    
     public float speed;
     
     public float delay;
@@ -16,6 +17,8 @@ public class EnemyController : MonoBehaviour
     public int maxHealth;
 
     HealthController targetPlayer;
+
+    Rigidbody2D rigidbody;
 
     Transform meleeTag;
     bool attackDelay = false;
@@ -35,7 +38,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance(transform.position, targetPlayer.Position) > 0) // If the distance between the enemy and player is more than 0 move towards the player 
+        if (Vector2.Distance(transform.position, targetPlayer.Position) > 0) // If the distance between the enemy and player is more than 0 move towards the player 
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPlayer.Position, speed * Time.deltaTime); // by using enemy's and player's position and speed to calculate
         }

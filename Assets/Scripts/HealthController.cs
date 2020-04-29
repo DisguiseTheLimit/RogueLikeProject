@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public delegate void PlayerEventHandler(HealthController controller);
 
@@ -14,19 +15,26 @@ public class HealthController : MonoBehaviour
     public int health = 6;
     public int maximumHealth = 6;
 
+    public float restartDelay = 1f;
+
     public event PlayerEventHandler HealthChanged;
     public event PlayerEventHandler Killed;
+
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag ("Player");
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
-        
+        if (health == 0)
+        {
+            player.SetActive(false);
+        }
     }
 
     public void DamagePlayer(int damage)
@@ -52,4 +60,9 @@ public class HealthController : MonoBehaviour
 
         HealthChanged?.Invoke(this);
     }
+
+    //void Restart()
+    //{
+        //SceneManager.LoadScene("JordanTest");
+    //}
 }
