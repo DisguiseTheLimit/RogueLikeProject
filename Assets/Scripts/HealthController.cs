@@ -31,9 +31,11 @@ public class HealthController : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
-        if (health == 0)
+        if (health <= 0)
         {
             player.SetActive(false);
+            SceneManager.LoadScene("GameOver");
+            Debug.Log("Game Over");
         }
     }
 
