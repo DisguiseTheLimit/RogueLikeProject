@@ -4,11 +4,11 @@ using UnityEngine;
 
 // This script controls the enemy character's AI
 
-public class EnemyController : MonoBehaviour
+public class NonDamagingEnemyController : MonoBehaviour
 {
-    
+
     public float speed;
-    
+
     public float delay;
 
     public float damageDelayTime;
@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour
         // transform position
 
         meleeTag = GameObject.FindWithTag("Melee").GetComponent<Transform>();
-        //lavaTag = GameObject.FindWithTag("Lava").GetComponent<Transform>();
+        lavaTag = GameObject.FindWithTag("Lava").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -48,13 +48,11 @@ public class EnemyController : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, targetPlayer.Position, speed * Time.deltaTime); // by using enemy's and player's position and speed to calculate
         }
 
-        if (Vector2.Distance(transform.position, targetPlayer.Position) < 1) // If the distance between the enemy and player is less than 1 and if the bool "AttackDelay" is false
-                                                                             // execute the "DamagePlayer" function from the PlayerController script passing 1 as the damage value
-                                                                             // then after this execute the function "StartDelay"
+        if (Vector2.Distance(transform.position, targetPlayer.Position) < 1)
         {
             if (!attackDelay)
             {
-                targetPlayer.DamagePlayer(1);
+                targetPlayer.SpeedDecrease();
                 StartCoroutine(StartDelay());
             }
         }
@@ -76,14 +74,14 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        //if (Vector2.Distance(transform.position, lavaTag.position) < 1)
-        //{
-            //if (!damageDelay)
-            //{
-                //TakeDamage(1);
-                //StartCoroutine(StartDelay());
-            //}
-        //}
+        if (Vector2.Distance(transform.position, lavaTag.position) < 1)
+        {
+            if (!damageDelay)
+            {
+                TakeDamage(1);
+                StartCoroutine(StartDelay());
+            }
+        }
 
         if (health == 0)
         {
@@ -92,8 +90,8 @@ public class EnemyController : MonoBehaviour
     }
 
     IEnumerator StartDelay() // Sets the bool "AttackDelay" to true, then waits for a certain amount of seconds which is specified in the inspector in unity, then sets 
-                                     // the bool "AttackDelay" to false
-    {                                       
+                             // the bool "AttackDelay" to false
+    {
         attackDelay = true;
         yield return new WaitForSeconds(delay);
         attackDelay = false;

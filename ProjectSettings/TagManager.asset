@@ -9,6 +9,8 @@ TagManager:
   - Melee
   - Wall
   - Door
+  - Lava
+  - Ice
   layers:
   - Default
   - TransparentFX
@@ -48,6 +50,9 @@ TagManager:
     locked: 0
   - name: Projectile
     uniqueID: 3961874383
+    locked: 0
+  - name: Floor Types
+    uniqueID: 1865771883
     locked: 0
   - name: Enemy
     uniqueID: 1951679541

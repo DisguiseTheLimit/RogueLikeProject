@@ -7,6 +7,9 @@ public delegate void PlayerEventHandler(HealthController controller);
 
 public class HealthController : MonoBehaviour
 {
+    [SerializeField]
+    PlayerController playerController;
+
     public Vector2 Position => transform.position;
 
     public int Health => health;
@@ -49,6 +52,11 @@ public class HealthController : MonoBehaviour
         {
             KillPlayer();
         }
+    }
+
+    public void SpeedDecrease()
+    {
+        playerController.speed = playerController.speed / 2;
     }
 
     public void KillPlayer()
