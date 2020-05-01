@@ -1,0 +1,716 @@
+fileFormatVersion: 2
+guid: 4f55eb36ec0ad034593c42ab9b0024fe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8373867890042406950
+    second: Roguelike_Tileset_concept_0
+  - first:
+      213: 6633451655514034048
+    second: Roguelike_Tileset_concept_1
+  - first:
+      213: 6766826845520925589
+    second: Roguelike_Tileset_concept_2
+  - first:
+      213: -929852399904246959
+    second: Roguelike_Tileset_concept_3
+  - first:
+      213: -4673097773077382746
+    second: Roguelike_Tileset_concept_4
+  - first:
+      213: 9125407089776374257
+    second: Roguelike_Tileset_concept_5
+  - first:
+      213: 5562491377978931412
+    second: Roguelike_Tileset_concept_6
+  - first:
+      213: 7963877178624594040
+    second: Roguelike_Tileset_concept_7
+  - first:
+      213: -1960075059381640803
+    second: Roguelike_Tileset_concept_8
+  - first:
+      213: -494536361667719593
+    second: Roguelike_Tileset_concept_9
+  - first:
+      213: 8279667732713613088
+    second: Roguelike_Tileset_concept_10
+  - first:
+      213: -651282733390948111
+    second: Roguelike_Tileset_concept_11
+  - first:
+      213: 5423154467886808740
+    second: Roguelike_Tileset_concept_12
+  - first:
+      213: 4970740111509028813
+    second: Roguelike_Tileset_concept_13
+  - first:
+      213: -7079151203298098430
+    second: Roguelike_Tileset_concept_14
+  - first:
+      213: 2295523786383526623
+    second: Roguelike_Tileset_concept_15
+  - first:
+      213: 4386037926844890025
+    second: Roguelike_Tileset_concept_16
+  - first:
+      213: 6129555606149396181
+    second: Roguelike_Tileset_concept_17
+  - first:
+      213: -7552616578077805556
+    second: Roguelike_Tileset_concept_18
+  - first:
+      213: 7295762861312416004
+    second: Roguelike_Tileset_concept_19
+  - first:
+      213: 5880878019108119451
+    second: Roguelike_Tileset_concept_20
+  - first:
+      213: 5417921165390353685
+    second: Roguelike_Tileset_concept_0
+  - first:
+      213: 1131103794902371429
+    second: Roguelike_Tileset_concept_1
+  - first:
+      213: -4506752637792205088
+    second: Roguelike_Tileset_concept_2
+  - first:
+      213: 6222921360054354128
+    second: Roguelike_Tileset_concept_3
+  - first:
+      213: -1926113129886193902
+    second: Roguelike_Tileset_concept_4
+  - first:
+      213: 1226896949138539187
+    second: Roguelike_Tileset_concept_5
+  - first:
+      213: -6738718106076653638
+    second: Roguelike_Tileset_concept_6
+  - first:
+      213: -235856776580273969
+    second: Roguelike_Tileset_concept_7
+  - first:
+      213: -1203847645287974742
+    second: Roguelike_Tileset_concept_8
+  - first:
+      213: 8864933493840679311
+    second: Roguelike_Tileset_concept_9
+  - first:
+      213: -2515031747396007925
+    second: Roguelike_Tileset_concept_10
+  - first:
+      213: -7455110951305101475
+    second: Roguelike_Tileset_concept_11
+  - first:
+      213: -2130454410402855060
+    second: Roguelike_Tileset_concept_12
+  - first:
+      213: -3815118033288442904
+    second: Roguelike_Tileset_concept_13
+  - first:
+      213: 9081165555690877578
+    second: Roguelike_Tileset_concept_14
+  - first:
+      213: -3212121273726971559
+    second: Roguelike_Tileset_concept_15
+  - first:
+      213: -4545997828422959223
+    second: Roguelike_Tileset_concept_16
+  - first:
+      213: -2277037099662187943
+    second: Roguelike_Tileset_concept_17
+  - first:
+      213: 3255690310409925847
+    second: Roguelike_Tileset_concept_18
+  - first:
+      213: -894998203204246083
+    second: Roguelike_Tileset_concept_19
+  - first:
+      213: -2278360371696153667
+    second: Roguelike_Tileset_concept_21
+  - first:
+      213: -5213675661400698074
+    second: Roguelike_Tileset_concept_22
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 108
+        width: 192
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51599243892503b40800000000000000
+      internalID: 5417921165390353685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_1
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 274
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c804b98ec72bf00800000000000000
+      internalID: 1131103794902371429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 274
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e647dd8a5cc471c0800000000000000
+      internalID: -4506752637792205088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_3
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 274
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d00b3ba1024c5650800000000000000
+      internalID: 6222921360054354128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_4
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 275
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217eae730521545e0800000000000000
+      internalID: -1926113129886193902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_5
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 257
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2c96d5640d60110800000000000000
+      internalID: 1226896949138539187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_6
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 257
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7dec5f5934b72a0800000000000000
+      internalID: -6738718106076653638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_7
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 258
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc86016e2811abcf0800000000000000
+      internalID: -235856776580273969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_8
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa87be2e1f21b4fe0800000000000000
+      internalID: -1203847645287974742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_9
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8116d15b02960b70800000000000000
+      internalID: 8864933493840679311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_10
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0881a173ffc81dd0800000000000000
+      internalID: -2515031747396007925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_11
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5fb552b6102a8890800000000000000
+      internalID: -7455110951305101475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_12
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 210
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6706c9500b1f62e0800000000000000
+      internalID: -2130454410402855060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_13
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 210
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebc7a1bc5afd0bc0800000000000000
+      internalID: -3815118033288442904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_14
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 210
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a82b77575f7c60e70800000000000000
+      internalID: 9081165555690877578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_15
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 193
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 951570858b04c63d0800000000000000
+      internalID: -3212121273726971559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_16
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 193
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ff62f8f0f59e0c0800000000000000
+      internalID: -4545997828422959223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_17
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 171
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952ef3672d65660e0800000000000000
+      internalID: -2277037099662187943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_18
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 171
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d43aa286198e2d20800000000000000
+      internalID: 3255690310409925847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_19
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 154
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5e56740e35493f0800000000000000
+      internalID: -894998203204246083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_20
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 193
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93a75076631d9150800000000000000
+      internalID: 5880878019108119451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_21
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 257
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb49be2053a160e0800000000000000
+      internalID: -2278360371696153667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roguelike_Tileset_concept_22
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6239c14fb9d45a7b0800000000000000
+      internalID: -5213675661400698074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
