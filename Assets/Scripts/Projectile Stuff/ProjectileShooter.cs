@@ -28,12 +28,12 @@ public class ProjectileShooter : MonoBehaviour
         }
     }
 
-    public bool TryShoot()
+    public bool TryShoot(Vector2 target)
     {
         if(Time.time >= spawnTime)
         {
             gunShot.Play();
-            Spawn(transform.position, transform.rotation);
+            Spawn(transform.position, Quaternion.FromToRotation(Vector3.up, target - (Vector2)transform.position));
             spawnTime = Time.time + fireRate;
             return true;
         }

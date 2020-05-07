@@ -11,6 +11,9 @@ TagManager:
   - Door
   - Lava
   - Ice
+  - PoisonCloud
+  - ExplosiveBarrel
+  - NonDamagingEnemy
   layers:
   - Default
   - TransparentFX

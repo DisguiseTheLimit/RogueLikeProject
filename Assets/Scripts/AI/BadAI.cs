@@ -17,7 +17,7 @@ public class BadAI : MonoBehaviour
         playerController.Move(moveInput);
 
        
-            projectileShooter.TryShoot();
+            projectileShooter.TryShoot(Vector2.zero);
         
 
     }

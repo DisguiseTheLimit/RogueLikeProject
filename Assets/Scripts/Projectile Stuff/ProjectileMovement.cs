@@ -31,5 +31,10 @@ public class ProjectileMovement : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyController>().TakeDamage(1);
         }
+
+        if (collision.transform.tag == "NonDamagingEnemy")
+        {
+            collision.gameObject.GetComponent<NonDamagingEnemyController>().TakeDamage(1);
+        }
     }
 }

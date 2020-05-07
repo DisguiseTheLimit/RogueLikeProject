@@ -12,7 +12,7 @@ public class WeaponSwitching : MonoBehaviour
     void Start()
     {
         
-        changeWeapon(0);
+        changeWeapon(1);
        
     }
 
@@ -21,12 +21,12 @@ public class WeaponSwitching : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            changeWeapon(0);
+            changeWeapon(1);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            changeWeapon(1);
+            changeWeapon(0);
         }
     }
 

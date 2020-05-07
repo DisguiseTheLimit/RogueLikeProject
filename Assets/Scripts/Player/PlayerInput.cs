@@ -9,7 +9,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     ProjectileShooter projectileShooter;
 
-    bool weaponSwitching = false;
+    bool weaponSwitching = true;
 
     private void Update()
     {
@@ -18,17 +18,19 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            weaponSwitching = true;
+            weaponSwitching = false;
         }
 
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            weaponSwitching = false;
+            weaponSwitching = true;
         }
 
         if (Input.GetMouseButton(0) && weaponSwitching)
         {
-            projectileShooter.TryShoot();
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            projectileShooter.TryShoot(mousePosition);
         }
     }
 }

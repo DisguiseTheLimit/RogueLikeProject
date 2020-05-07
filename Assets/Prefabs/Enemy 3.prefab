@@ -118,7 +118,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689324068009168255}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -143,9 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19a0ed4f20369c4283e5e48b273a63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  delay: 1
-  damageDelayTime: 0
-  meleeDelayTime: 1
-  health: 2
-  maxHealth: 2
+  speed: 3.5
+  delay: 0.2
+  damageDelayTime: 2
+  meleeDelayTime: 0.2
+  health: 20
+  maxHealth: 20

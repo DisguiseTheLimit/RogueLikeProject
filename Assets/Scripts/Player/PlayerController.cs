@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
         //rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0); // Used to calculate what the velocity of the player will be on the X and Y axes
 
-        if (Input.GetKeyDown(KeyCode.W)) // If "W" key is pressed the Player's rigidbody rotates to the 0 coordinate in accordance with the rotation speed that is set.
+        if (Input.GetKey(KeyCode.W)) // If "W" key is pressed the Player's rigidbody rotates to the 0 coordinate in accordance with the rotation speed that is set.
         {
             //rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, 0, RotationSpeed * Time.deltaTime));
             animate.SetTrigger("Run_Up");
@@ -39,10 +39,10 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.W)) // If "W" key is 
         {
-            
+            //animate.ResetTrigger("Run_Up");
         }
 
-        if (Input.GetKeyDown(KeyCode.A)) // If "A" key is pressed the Player's rigidbody rotates to the 90 coordinate in accordance with the rotation speed that is set.
+        if (Input.GetKey(KeyCode.A)) // If "A" key is pressed the Player's rigidbody rotates to the 90 coordinate in accordance with the rotation speed that is set.
         {
             //rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, 90, RotationSpeed * Time.deltaTime));
             animate.SetTrigger("Run_Left");
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.S)) // If "S" key is pressed the Player's rigidbody rotates to the 180 coordinate in accordance with the rotation speed that is set.
+        if (Input.GetKey(KeyCode.S)) // If "S" key is pressed the Player's rigidbody rotates to the 180 coordinate in accordance with the rotation speed that is set.
         {
             //rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, 180, RotationSpeed * Time.deltaTime));
             animate.SetTrigger("Run_Down");
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.D)) // If "D" key is pressed the Player's rigidbody rotates to the -90 coordinate in accordance with the rotation speed that is set.
+        if (Input.GetKey(KeyCode.D)) // If "D" key is pressed the Player's rigidbody rotates to the -90 coordinate in accordance with the rotation speed that is set.
         {
             //rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, -90, RotationSpeed * Time.deltaTime));
             animate.SetTrigger("Run_Right");
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.D)) // If "W" and "D" keys are pressed the Player's rigidbody rotates to the -45 coordinate in accordance with the rotation speed that is set.
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D)) // If "W" and "D" keys are pressed the Player's rigidbody rotates to the -45 coordinate in accordance with the rotation speed that is set.
         {
             //rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, -45, RotationSpeed * Time.deltaTime));
             animate.SetTrigger("Run_Top_Right");
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D)) // If "S" and "D" keys are pressed the Player's rigidbody rotates to the -135 coordinate in accordance with the rotation speed that is set.
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)) // If "S" and "D" keys are pressed the Player's rigidbody rotates to the -135 coordinate in accordance with the rotation speed that is set.
         {
             //rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, -135, RotationSpeed * Time.deltaTime));
             animate.SetTrigger("Run_Bottom_Right");
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.S)) // If "A" and "S" keys are pressed the Player's rigidbody rotates to the -225 coordinate in accordance with the rotation speed that is set.
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S)) // If "A" and "S" keys are pressed the Player's rigidbody rotates to the -225 coordinate in accordance with the rotation speed that is set.
         {
             //rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, -225, RotationSpeed * Time.deltaTime));
             animate.SetTrigger("Run_Bottom_Left");
@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.W)) // If "A" and "W" keys are pressed the Player's rigidbody rotates to the -315 coordinate in accordance with the rotation speed that is set.
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W)) // If "A" and "W" keys are pressed the Player's rigidbody rotates to the -315 coordinate in accordance with the rotation speed that is set.
         {
             //rigidbody.MoveRotation(Mathf.LerpAngle(rigidbody.rotation, -315, RotationSpeed * Time.deltaTime));
             animate.SetTrigger("Run_Top_Left");

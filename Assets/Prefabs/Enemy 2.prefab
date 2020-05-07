@@ -122,11 +122,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f97bd71e5e7ff44eae340d0aaab4457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  delay: 1
-  meleeDelayTime: 1
-  health: 2
-  maxHealth: 2
+  speed: 3.5
+  delay: 0.2
+  damage: 1
+  damageDelayTime: 2
+  meleeDelayTime: 0.2
+  health: 20
+  maxHealth: 20
 --- !u!50 &417797437448513888
 Rigidbody2D:
   serializedVersion: 4
@@ -135,7 +137,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689324068009168255}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
