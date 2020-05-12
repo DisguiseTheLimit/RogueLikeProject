@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class ProjectileShooter : MonoBehaviour
 {
     [SerializeField]
@@ -25,6 +24,8 @@ public class ProjectileShooter : MonoBehaviour
 
     public AudioSource reloadSound;
 
+    public static bool reloadDelay = false;
+
     public void Update()
     {
         ammoText.GetComponent<Text>().text = ammoCount.ToString();
@@ -34,10 +35,18 @@ public class ProjectileShooter : MonoBehaviour
             {
                 Debug.Log("Reload Success");
                 reloadSound.Play();
+                StartCoroutine(ReloadDelayTime());
                 ammoCount = 1000;
                 ammoText.GetComponent<Text>().text = ammoCount.ToString();
             }
         }
+    }
+
+    public IEnumerator ReloadDelayTime()
+    {
+        reloadDelay = true;
+        yield return new WaitForSeconds(4);
+        reloadDelay = false;
     }
 
     public void AmmoCount()
