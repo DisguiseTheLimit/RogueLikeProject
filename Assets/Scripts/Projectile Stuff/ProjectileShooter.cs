@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class ProjectileShooter : MonoBehaviour
@@ -16,7 +17,40 @@ public class ProjectileShooter : MonoBehaviour
 
     private float spawnTime;
 
+    public static float ammoCount = 1000;
+
+    public Transform ammoText;
+
     public AudioSource gunShot;
+
+    public void Update()
+    {
+        ammoText.GetComponent<Text>().text = ammoCount.ToString();
+        if (ammoCount <= 0)
+        {
+            if (Input.GetKey("r"))
+            {
+                Debug.Log("Reload Success");
+                ammoCount = 1000;
+                ammoText.GetComponent<Text>().text = ammoCount.ToString();
+            }
+        }
+    }
+
+    public void AmmoCount()
+    {
+        //Debug.Log("Ammo Count Change Successful");
+        ammoCount -= 1;
+    }
+
+    //public void Reload()
+    //{
+            //if (Input.GetKey("r"))
+            //{
+                //Debug.Log("Reload Success");
+                //ammoText.GetComponent<Text>().text = ammoCount.ToString();
+            //}
+    //}
 
     void Spawn(Vector3 positionSpawn, Quaternion rotateSpawn)
     {

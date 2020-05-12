@@ -30,7 +30,15 @@ public class PlayerInput : MonoBehaviour
         {
             Vector3 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            projectileShooter.TryShoot(mousePosition);
+            if (ProjectileShooter.ammoCount > 0)
+            {
+                projectileShooter.TryShoot(mousePosition);
+                projectileShooter.AmmoCount();
+            }
+            //if (ProjectileShooter.ammoCount == 0)
+            //{
+                //projectileShooter.Reload();
+            //}
         }
     }
 }
