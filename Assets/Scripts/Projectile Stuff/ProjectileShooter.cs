@@ -23,6 +23,8 @@ public class ProjectileShooter : MonoBehaviour
 
     public AudioSource gunShot;
 
+    public AudioSource reloadSound;
+
     public void Update()
     {
         ammoText.GetComponent<Text>().text = ammoCount.ToString();
@@ -31,6 +33,7 @@ public class ProjectileShooter : MonoBehaviour
             if (Input.GetKey("r"))
             {
                 Debug.Log("Reload Success");
+                reloadSound.Play();
                 ammoCount = 1000;
                 ammoText.GetComponent<Text>().text = ammoCount.ToString();
             }
