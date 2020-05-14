@@ -6,8 +6,11 @@ public class WeaponSwitching : MonoBehaviour
 {
 
     public int currentWeapon;
+
     public Transform[] weapons;
-    
+
+    public static bool reloadDelay = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +27,14 @@ public class WeaponSwitching : MonoBehaviour
             changeWeapon(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && !reloadDelay)
         {
             changeWeapon(0);
+        }
+
+        if (Input.GetKey("r") && ProjectileShooter.ammoCount < 1000)
+        {
+            StartCoroutine(ReloadDelayTime());
         }
     }
 
@@ -40,5 +48,12 @@ public class WeaponSwitching : MonoBehaviour
             else
                 weapons[i].gameObject.SetActive(false);
         }
+    }
+
+    public IEnumerator ReloadDelayTime()
+    {
+        reloadDelay = true;
+        yield return new WaitForSeconds(4);
+        reloadDelay = false;
     }
 }

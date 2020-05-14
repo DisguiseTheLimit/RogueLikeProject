@@ -30,11 +30,23 @@ public class ProjectileMovement : MonoBehaviour
         if (collision.transform.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyController>().TakeDamage(1);
+            collision.gameObject.GetComponent<EnemyAI>().TakeDamage(1);
+        }
+
+        if (collision.transform.tag == "ShootingEnemy")
+        {
+            collision.gameObject.GetComponent<ShootingEnemyAI>().TakeDamage(1);
         }
 
         if (collision.transform.tag == "NonDamagingEnemy")
         {
             collision.gameObject.GetComponent<NonDamagingEnemyController>().TakeDamage(1);
+            collision.gameObject.GetComponent<EnemyAI>().TakeDamage(1);
+        }
+
+        if (collision.transform.tag == "Player")
+        {
+            collision.gameObject.GetComponent<HealthController>().DamagePlayer(1);
         }
     }
 }

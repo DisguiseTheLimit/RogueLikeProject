@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 // This script controls the movement of the player character
 
 public class PlayerInput : MonoBehaviour
@@ -35,10 +37,6 @@ public class PlayerInput : MonoBehaviour
                 projectileShooter.TryShoot(mousePosition);
                 projectileShooter.AmmoCount();
             }
-            //if (ProjectileShooter.ammoCount == 0)
-            //{
-                //projectileShooter.Reload();
-            //}
         }
     }
 }

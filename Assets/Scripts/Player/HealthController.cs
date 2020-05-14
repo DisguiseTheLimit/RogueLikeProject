@@ -70,9 +70,4 @@ public class HealthController : MonoBehaviour
 
         HealthChanged?.Invoke(this);
     }
-
-    //void Restart()
-    //{
-        //SceneManager.LoadScene("JordanTest");
-    //}
 }

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Charge : MonoBehaviour
 {
+    //[SerializeField]
+    //EnemyController enemyController;
+
     [SerializeField]
-    EnemyController enemyController;
+    EnemyAI enemyAI;
 
     [SerializeField]
     float chargeTime;
@@ -23,7 +26,8 @@ public class Charge : MonoBehaviour
 
     void Awake()
     {
-        defaultSpeed = enemyController.speed;
+        //defaultSpeed = enemyController.speed;
+        defaultSpeed = enemyAI.speed;
         StartCoroutine(Cycle());
     }
 
@@ -32,11 +36,14 @@ public class Charge : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(normalDuration);
-            enemyController.speed = 0;
+            enemyAI.speed = 0;
+            //enemyController.speed = 0;
             yield return new WaitForSeconds(chargeTime);
-            enemyController.speed = chargeSpeed;
+            enemyAI.speed = chargeSpeed;
+            //enemyController.speed = chargeSpeed;
             yield return new WaitForSeconds(chargeDuration);
-            enemyController.speed = defaultSpeed;
+            enemyAI.speed = defaultSpeed;
+            //enemyController.speed = defaultSpeed;
         }
     }
 }

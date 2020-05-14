@@ -15,13 +15,11 @@ public class ProjectileShooter : MonoBehaviour
     Collider2D collider;
 
     private float spawnTime;
-
     public static float ammoCount = 1000;
 
     public Transform ammoText;
 
     public AudioSource gunShot;
-
     public AudioSource reloadSound;
 
     public static bool reloadDelay = false;
@@ -29,7 +27,7 @@ public class ProjectileShooter : MonoBehaviour
     public void Update()
     {
         ammoText.GetComponent<Text>().text = ammoCount.ToString();
-        if (ammoCount <= 0)
+        if (ammoCount < 1000)
         {
             if (Input.GetKey("r"))
             {

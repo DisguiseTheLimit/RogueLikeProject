@@ -7,45 +7,36 @@ using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
-    
-    public float speed;
 
-    //public Vector3 direction;
-    
-    public float delay;
-
-    public int damage;
-
-    public float damageDelayTime;
-
-    public float meleeDelayTime;
-
-    public int health;
-    public int maxHealth;
+    Transform meleeTag;
+    Transform lavaTag;
 
     HealthController targetPlayer;
 
     Rigidbody2D rigidbody;
 
-    Transform meleeTag;
-    Transform lavaTag;
+    public float speed;
+    public float delay;
+    public float damageDelayTime;
+    public float meleeDelayTime;
+
+    public int damage;
+    public int health;
+    public int maxHealth;
+
     bool attackDelay = false;
     bool meleeDelay = false;
     bool damageDelay = false;
     bool weaponSwitching = false;
-    //public bool canWalk;
 
     // Start is called before the first frame update
     void Start()
     {
         //direction = (new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f)).normalized;
         //transform.Rotate(direction);
-
         targetPlayer = StageManager.Instance.Player;
-
         //targetPlayer = GameObject.FindWithTag("Player").GetComponent<Transform>(); // Used to find what GameObject has the tag "Player" and then references that GameObject's 
         // transform position
-
         meleeTag = GameObject.FindWithTag("Melee").GetComponent<Transform>();
         //lavaTag = GameObject.FindWithTag("Lava").GetComponent<Transform>();
     }
@@ -55,16 +46,13 @@ public class EnemyController : MonoBehaviour
     {
         //Vector3 newPos = transform.position + direction * speed * Time.deltaTime;
         //rigidbody.MovePosition(newPos);
-        
         //RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right);
-
         //if (hitRight.collider.tag == "Wall" && canWalk)
         //{
             //canWalk = false;
             //transform.Translate(Vector3.up * 1f * Time.deltaTime);
             //canWalk = true;
         //}
-
         if (Vector2.Distance(transform.position, targetPlayer.Position) > 0) // If the distance between the enemy and player is more than 0 move towards the player 
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPlayer.Position, speed * Time.deltaTime); // by using enemy's and player's position and speed to calculate
@@ -107,7 +95,6 @@ public class EnemyController : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
         //if (Vector2.Distance(transform.position, lavaTag.position) < 1)
         //{
             //if (!damageDelay)
@@ -116,7 +103,6 @@ public class EnemyController : MonoBehaviour
                 //StartCoroutine(StartDelay());
             //}
         //}
-
         if (health == 0)
         {
             Destroy(gameObject);
@@ -124,7 +110,7 @@ public class EnemyController : MonoBehaviour
     }
 
     IEnumerator StartDelay() // Sets the bool "AttackDelay" to true, then waits for a certain amount of seconds which is specified in the inspector in unity, then sets 
-                                     // the bool "AttackDelay" to false
+                             // the bool "AttackDelay" to false
     {                                       
         attackDelay = true;
         yield return new WaitForSeconds(delay);
@@ -149,7 +135,6 @@ public class EnemyController : MonoBehaviour
     {
         health -= damageAmount;
     }
-
     //void OnCollisionEnter2D(Collision2D collision)
     //{
         //Debug.Log("Collision Detected");
