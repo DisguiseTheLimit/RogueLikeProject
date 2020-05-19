@@ -31,6 +31,7 @@ public class ProjectileMovement : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyController>().TakeDamage(1);
             collision.gameObject.GetComponent<EnemyAI>().TakeDamage(1);
+            collision.gameObject.GetComponent<EnemyAITest>().TakeDamage(1);
         }
 
         if (collision.transform.tag == "ShootingEnemy")
@@ -42,6 +43,7 @@ public class ProjectileMovement : MonoBehaviour
         {
             collision.gameObject.GetComponent<NonDamagingEnemyController>().TakeDamage(1);
             collision.gameObject.GetComponent<EnemyAI>().TakeDamage(1);
+            collision.gameObject.GetComponent<EnemyAITest>().TakeDamage(1);
         }
 
         if (collision.transform.tag == "Player")
