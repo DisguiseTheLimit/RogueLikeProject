@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     public void Move(Vector2 moveInput)
     {
         moveVelocity = moveInput.normalized * speed;
-
+        Debug.Log("move Velocity: " + moveVelocity);
         //rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0); // Used to calculate what the velocity of the player will be on the X and Y axes
 
         if (Input.GetKeyDown(KeyCode.W)) // If "W" key is pressed the Player's rigidbody rotates to the 0 coordinate in accordance with the rotation speed that is set.

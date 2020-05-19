@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEditor;
@@ -10,6 +11,12 @@ using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 //using Unity.Mathematics;
 
+public enum WallType
+{
+    None,
+    Wall,
+    Door
+}
 public class MapGenerator : MonoBehaviour
 {
 
@@ -21,14 +28,25 @@ public class MapGenerator : MonoBehaviour
     
     [Range(0,100)]
     public int doorChance = 20;
-    
+
+    public int minRooms = 10;
+    public int maxRooms = 20;
+    public int maxAttempts = 10000;
     public Tilemap floor;
     public Tilemap walls;
+    public Tilemap doors;
+    public Tilemap agents;
     public Tile floorTile;
     public Tile wallTile;
-
+    public Tile doorTile;
+    public Tile openDoorTile;
+    public GameObject doorCollider;
+    public GameObject[] enemies;
+    public GameObject player;
+    public int startingRoom = 0;
+    
     public int numberRooms = 0;
-    private List<box> boxes = new List<box>();
+    private List<Box> boxes = new List<Box>();
     //public Vector3Int tileMapSize;
     //private int width = tileMapSize.x;
    // private int height = tileMapSize.y;
@@ -36,43 +54,78 @@ public class MapGenerator : MonoBehaviour
     
     
     [SerializeField]
-    public box test;
+    public Box test;
    // int mapHeight;
    //int mapWidth;
 
-   private void Update()
-   {
-       int showroom = 0;
-       if (Input.GetKeyDown("space"))
-       {
-           numberRooms = 0;
-           showroom = 0;
-           boxes = new List<box>();
-           walls.ClearAllTiles();
-           floor.ClearAllTiles();
-           CreateRoom();
-           for (int i = 0; i < numberRooms; i++)
-           {
-               DrawRoom(i);    
-           }
+   
+   
 
-           
-           
+   private void Start()
+   {
+       if(FilterMap())
+       {
+           SpawnPlayer(agents, player, startingRoom);
+           //DrawMap();
+           DrawRoom(startingRoom);
+           Debug.Log("Map drawn");
            
        }
-
-       if (Input.GetKeyDown(KeyCode.UpArrow))
+       else
        {
-           DrawRoom(showroom);
-           showroom++;
+           Debug.Log("no valid map found");
        }
 
    }
 
-   public box CreateBox(int roomNumber, int X, int Y )
+   bool FilterMap()
+   {
+       CreateMap();
+       bool maxAttemptsReached = false;
+       int i = 0;
+       
+           while (i < maxAttempts && (numberRooms < minRooms || numberRooms > maxRooms))
+           {
+               ResetMap();
+               CreateMap();
+               Debug.Log("The current attempt: " + i + " number of rooms: "+ numberRooms);
+               i++;
+           }
+           Debug.Log(" Attempt reached: " + i + " number of rooms: "+ numberRooms);
+           return i < maxAttempts;
+   }
+
+   void CreateMap()
+   {
+       numberRooms = 0;
+       boxes = new List<Box>();
+       CreateRoom();
+   }
+
+   void ResetMap()
+   {
+       walls.ClearAllTiles();
+       floor.ClearAllTiles();
+   }
+
+   void DrawMap()
+   {
+       //todo temp code to show entire map
+       for (int i = 0; i < numberRooms; i++)
+       {
+           DrawRoom(i);
+           if (i != startingRoom)
+           {
+               PopulateRoom(i, agents , enemies);
+           }
+
+       }
+   }
+
+   public Box CreateBox(int roomNumber, int X, int Y )
    {
        //Debug.Log("Start Create Box with param room: " +roomNumber +" at ("+ X+","+Y+")" );
-       box boxNew= new box();
+       Box boxNew= new Box();
        boxes.Add(boxNew);
       // Debug.Log("New box added, number of boxes =:" + boxes.Count);
        boxNew.map = this;
@@ -83,15 +136,16 @@ public class MapGenerator : MonoBehaviour
        //Debug.Log("New box has X:" + boxNew.X + " Y:" + boxNew.Y +  "roomNumber:" + boxNew.roomNumber);
 
        // Todo Fix This
-       boxNew.walls = new char[4];
+       boxNew.walls = new WallType[4];
        for (int i = 0; i < 4; i++)
        {
            int adjX = X + (i % 2 == 1 ? i - 2 : 0);
            int adjY = Y + (i % 2 == 0 ? i - 1 : 0);
            if (RandomChance(wallChance))
-           {
-               boxNew.walls[i] = 'W';
-              // Debug.Log("");
+           {    
+               // Add wall to this side
+               boxNew.walls[i] = WallType.Wall;
+               // Debug.Log("");
            }
            else
            {
@@ -99,15 +153,18 @@ public class MapGenerator : MonoBehaviour
 
                if ( !AvailableRoom(adjX , adjY ) )
                {
-                   // if populated, place wall 
-                   boxNew.walls[i] = 'W';
+                   // if populated or fringe of map, place wall 
+                   boxNew.walls[i] = WallType.Wall;
                }
                else
                {
-                   boxNew.walls[i] = 'N';
+                   // No wall this side
+                   boxNew.walls[i] = WallType.None;
                   // Debug.Log("Spawn Create Box with param room: " +roomNumber +" at ("+adjX+","+adjY+")" );
-                   box boxNext = CreateBox(roomNumber,adjX ,adjY );
-                   boxNext.walls[(i + 2) % 4] = 'N';
+                   // As there is no wall on this side, need to create an adjacent box
+                   Box boxNext = CreateBox(roomNumber,adjX ,adjY );
+                   //Make sure new box has no wall on adjacent side, adjacent wall is i + 2 cloockwise
+                   boxNext.walls[(i + 2) % 4] = WallType.None;
                    //boxNext.draw(walls ,wallTile);
                   // Debug.Log("End Create BoxSpawned  at ("+ boxNext.X+","+ boxNext.Y+") walls = "+ boxNext.walls[0]+ boxNext.walls[1]+ boxNext.walls[2]+ boxNext.walls[3]);
                }
@@ -130,10 +187,10 @@ public class MapGenerator : MonoBehaviour
      return result;
    }
  
-   public box GetBox (int X, int Y)
+   public Box GetBox (int X, int Y)
    {
        // todo add boundary check
-       box result = boxes.FirstOrDefault(box => box.X == X && box.Y == Y ) ;
+       Box result = boxes.FirstOrDefault(box => box.X == X && box.Y == Y ) ;
 
        return result;
    }
@@ -148,15 +205,15 @@ public class MapGenerator : MonoBehaviour
    }
 
 
-   void DrawRoom(int roomNumber )
+  public void DrawRoom(int roomNumber )
    {
        // Get all boxes in room
-       List<box> roomBoxes = boxes.FindAll(box => box.roomNumber == roomNumber);
+       List<Box> roomBoxes = boxes.FindAll(box => box.roomNumber == roomNumber);
 
        // For each box, call draw
-       foreach (box roomBox in roomBoxes)
+       foreach (Box roomBox in roomBoxes)
        {
-           roomBox.draw(walls, wallTile, floor, floorTile);
+           roomBox.Draw(walls, wallTile, floor, floorTile, doorTile,doors, openDoorTile);
        }
        
        
@@ -164,12 +221,16 @@ public class MapGenerator : MonoBehaviour
 
   public void AddRoomDoor(int roomNumber)
    {
-       List<box> roomBoxes = boxes.FindAll(box => box.roomNumber == roomNumber);
+       // Find all the boxes within a room (roomNumber). 
+       List<Box> roomBoxes = boxes.FindAll(box => box.roomNumber == roomNumber);
        int numBoxes = roomBoxes.Count;
+       
+       // Reduce the door chance for larger rooms
        int roomDoorChance = (numBoxes > 5 ? doorChance / (numBoxes - 1) : doorChance);
-       foreach (box roomBox in roomBoxes)
+       // Add doors for each box in the room
+       foreach (Box roomBox in roomBoxes)
        {
-           roomBox.addDoors(roomDoorChance);
+           roomBox.AddDoors(roomDoorChance);
        }
    }
 
@@ -183,7 +244,7 @@ public class MapGenerator : MonoBehaviour
        Vector3Int location = Vector3Int.zero;
      //  Debug.Log("location is: " + location);
        
-       box newBox = CreateBox(numberRooms, 0, 0);
+       Box newBox = CreateBox(numberRooms, 0, 0);
        numberRooms++;
        AddRoomDoor(0);
       
@@ -191,40 +252,68 @@ public class MapGenerator : MonoBehaviour
        //newBox.draw(walls ,wallTile);
        
    }
+
+  public void PopulateRoom(int roomNumber, Tilemap tilelayer, GameObject[] Population)
+  {
+      //todo Making enemy spawn variability
+      
+      // Get all boxes in room
+      List<Box> roomBoxes = boxes.FindAll(box => box.roomNumber == roomNumber);
+
+      // For each box, spaw enemy
+      foreach (Box roomBox in roomBoxes)
+      {
+            int chosenItem = Random.Range(0, Population.Length);
+         
+              GameObject item = Population[chosenItem];
+              roomBox.SpawnItem(agents, item);
+          
+
+      }
+      
+  }
+
+  void SpawnPlayer(Tilemap tilelayer, GameObject player, int startingRoom)
+  {
+      
+      
+      Box startingBox = boxes.FirstOrDefault(box => box.roomNumber == startingRoom);
+      
+      startingBox.SpawnItem(tilelayer, player);
+
+  }
+
+  
 }
 
 
-public class box : MonoBehaviour
+public class Box : MonoBehaviour
 {
     
     public int roomNumber;
     public int X;
     public int Y;
     public int size;
-    public char[] walls;
+    public WallType[] walls;
     public MapGenerator map;
     bool[] doors = new bool[4];
 
-    public void draw(Tilemap tilelayer, Tile wallTile, Tilemap floorlayer, Tile floorTile)
+    public void Draw(Tilemap tilelayer, Tile wallTile, Tilemap floorlayer, Tile floorTile, Tile doorTile, Tilemap doorLayer, Tile openDoorTile)
     {
         for (int i = 0; i < 4; i++)
         {
-            if (walls[i] != 'N')
+            if (walls[i] != WallType.None)
             {
                 Vector3Int lineStartLocation = new Vector3Int(X * size + (i == 3 ? size - 1 : 0),
                     Y * size + (i == 2 ? size - 1 : 0), 0);
+                CreateLine(tilelayer, lineStartLocation, wallTile, i % 2, size); 
                 if (doors[i])
                 {
-                    createLine(tilelayer, lineStartLocation, wallTile, i % 2, size );
-                    //lineStartLocation[i % 2] = lineStartLocation[i % 2] + 2;
-                    //createLine(tilelayer, lineStartLocation, wallTile, i % 2, size/2 -1 );
-                }
-                else
-                {
-                    createLine(tilelayer, lineStartLocation, wallTile, i % 2, size);                   
+                    CreateLine(tilelayer, lineStartLocation, openDoorTile, i % 2, size, 1, 2);
+                    CreateLine(doorLayer, lineStartLocation, doorTile, i % 2, size, 1, 2);
                 }
 
- 
+
             }
         }
         // Draw floor
@@ -232,23 +321,27 @@ public class box : MonoBehaviour
         {
             Vector3Int lineStartLocation = new Vector3Int(X * size ,
                 Y * size + i, 0);
-            createLine(floorlayer, lineStartLocation, floorTile, 0, size);
+            CreateLine(floorlayer, lineStartLocation, floorTile, 0, size);
         }
     }
        
-    Vector3Int createLine(Tilemap tilelayer, Vector3Int startLocation, Tile placeTile, int orientation, int length, int step = 1)
+    Vector3Int CreateLine(Tilemap tilelayer, Vector3Int startLocation, Tile placeTile, int orientation, int length, int step = 1, int skip = 0)
     {
         //Debug.Log("Start createLine, orientation:" + orientation + " length :"+ length + " step:"+ step);
         Vector3Int tileLocation = new Vector3Int(startLocation.x,startLocation.y,startLocation.z );
 
-        int tilePoint = startLocation[orientation];
-        int endPoint = length + tilePoint;
+        int tilePoint = startLocation[orientation] + skip;
+        int endPoint = length + startLocation[orientation] - skip;
         //Debug.Log("Pre loop tilePoint:" + tilePoint + " endPoint:"+endPoint);
         for ( ; tilePoint < endPoint; tilePoint+=step)
         {
             //Debug.Log("tilePoint:" + tilePoint + " endPoint:"+endPoint);
             tileLocation[orientation] = tilePoint;
             PlaceTile(tilelayer,tileLocation,placeTile);
+            if (skip > 0)
+            {
+                //Instantiate(map.doorCollider, tileLocation, quaternion.identity);
+            }
        
         }
 
@@ -263,16 +356,22 @@ public class box : MonoBehaviour
 
     }
 
-    public bool addDoors(int doorChance)
+    public bool AddDoors(int doorChance)
     {
         // for each side of box
         for (int i = 0; i < 4; i++)
         {
-            int adjX = X + (i % 2 == 1 ? i - 2 : 0);
-            int adjY = Y + (i % 2 == 0 ? i - 1 : 0);
+            // Find the adjacent box to the door.
             
-            if (walls[i] != 'N' && doors[i] != true)
+            
+            // Door 1 = left, 3 = right
+            int adjX = X + (i % 2 == 1 ? i - 2 : 0);
+            // Door 0 = Top, 2 = Bottom
+            int adjY = Y + (i % 2 == 0 ? i - 1 : 0);
+            // If wall & no door
+            if (walls[i] != WallType.None && doors[i] != true)
             {
+                
                 doors[i] = false;
                 //random door chance
                 if(map.RandomChance(doorChance))
@@ -280,28 +379,37 @@ public class box : MonoBehaviour
                     // if AvailableRoom
                     if (map.AvailableRoom(adjX, adjY))
                     {
-                        // place room
+                        // create new  room
+                        
+                        // get next available room number
                         int newRoomNum = map.numberRooms;
-                        box newBox = map.CreateBox(newRoomNum, adjX, adjY);
+                        // Create room box(s)
+                        Box newBox = map.CreateBox(newRoomNum, adjX, adjY);
                         map.numberRooms++;
+                        // Adds door to wall at position i, for the boxes
                         AddDoor(i, newBox);
                         map.AddRoomDoor(newRoomNum);
-                        //newBox.addDoors(doorChance);
-                        
-                        //place doors
-                        
+                        //newBox.addDoors(doorChance)
+
                     }
-                    else
-                    {
-                        box newBox = map.GetBox(adjX, adjY);
-                        // else if
+                    else  // existing room
+                    { 
+                        // get adjacent box to door
+                        Box newBox = map.GetBox(adjX, adjY);
+                        
                         if (newBox is null)
                         {
-                           // Debug.Log("Map boundary reached");
+                           Debug.Log("Map boundary reached");
                         }
                         else
                         {
-                            AddDoor(i, newBox);
+                            // Check to see if we are not adding the door to the same  room
+                            if (newBox.roomNumber != roomNumber)
+                            {
+                                // Add an adjacent doors
+                                AddDoor(i, newBox);
+                            }
+                            
                         }
                     }
                 }
@@ -310,14 +418,28 @@ public class box : MonoBehaviour
         return true;
     }
 
-    void AddDoor(int sideNumber, box adjBox )
+    void AddDoor(int sideNumber, Box adjBox )
     {
+        // create matching doors
         int adjSideNumber = (sideNumber + 2) % 4;
         doors[sideNumber] = true;
         adjBox.doors[adjSideNumber] = true;
         
-    }    
+    }
+
+    public void SpawnItem(Tilemap tileLayer,  GameObject item)
+    {
+       
+        int posX = X * size + (int) Mathf.Ceil(size/2);
+        int posY = Y * size + (int) Mathf.Ceil(size/2);
+        Vector3Int spawnLocation = new Vector3Int (posX, posY, 0);
+        
+        Instantiate(item, spawnLocation, Quaternion.identity);
+        
+    }
     
 }
+
+
 
 

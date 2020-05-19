@@ -9,6 +9,7 @@ TagManager:
   - Melee
   - Wall
   - Door
+  - MapGen
   layers:
   - Default
   - TransparentFX
