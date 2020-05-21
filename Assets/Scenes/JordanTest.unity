@@ -13465,6 +13465,16 @@ PrefabInstance:
       propertyPath: meleeSlash
       value: 
       objectReference: {fileID: 1112381428}
+    - target: {fileID: 1505107211768608758, guid: 6145dd917507b0442bf01cdb2b44cd5e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505107211768608758, guid: 6145dd917507b0442bf01cdb2b44cd5e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.697
+      objectReference: {fileID: 0}
     - target: {fileID: 1505107211768608759, guid: 6145dd917507b0442bf01cdb2b44cd5e,
         type: 3}
       propertyPath: ammoText
