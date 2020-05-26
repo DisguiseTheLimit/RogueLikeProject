@@ -34,7 +34,10 @@ public class PlayerController : MonoBehaviour
         if (currentAnimation != animation)
         {
             currentAnimation = animation;
-            animate.Play(animation);
+            if (animate != null)
+            {
+                animate.Play(animation);
+            }  
         }
     }
 
