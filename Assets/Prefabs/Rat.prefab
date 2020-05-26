@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 4044571179514419019}
   - component: {fileID: 537820666728607155}
   - component: {fileID: 3709497755130585202}
+  - component: {fileID: 4476469919337178881}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Enemy
@@ -296,3 +297,22 @@ MonoBehaviour:
   speed: 3.5
   maxRange: 5
   minRange: 1.1
+--- !u!95 &4476469919337178881
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3709497755130585211}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d20e0463740f7d94d8b4f00746ae993e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

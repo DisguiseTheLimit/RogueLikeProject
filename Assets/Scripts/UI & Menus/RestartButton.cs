@@ -7,7 +7,7 @@ public class RestartButton : MonoBehaviour
 {
     public void Restart()
     {
-        SceneManager.LoadScene("JordanTest");
+        SceneManager.LoadScene("RoomGenerationTestv6");
         Debug.Log("Restart Successful");
     }
 }

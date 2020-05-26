@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene("JordanTest");
+        SceneManager.LoadScene("RoomGenerationTestv6");
         Debug.Log("Game Start Successful");
     }
 
