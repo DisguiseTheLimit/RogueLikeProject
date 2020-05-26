@@ -80,9 +80,13 @@ public class RegisterDoorCollisions : MonoBehaviour
            map2.DrawRoom(adjBox.roomNumber);
            
            
-           // todo enemies break generator, script doesnt work
-           //map2.PopulateRoom(adjBox.roomNumber, map2.agents , map2.enemies);
-
+           // todo make room number reference starting room variable
+           if(!adjBox.isPopulated && adjBox.roomNumber != 0)
+           {
+                map2.PopulateRoom(adjBox.roomNumber, map2.agents, map2.enemies);
+                adjBox.isPopulated = true;
+           }
+ 
            Debug.Log("moveX: " + moveX + " MoveY: " + moveY );
            
            col.gameObject.transform.Translate(moveX,moveY,0, Space.World);

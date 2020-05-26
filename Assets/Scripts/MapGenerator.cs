@@ -20,6 +20,9 @@ public enum WallType
 public class MapGenerator : MonoBehaviour
 {
 
+
+    
+
     [Range(0,100)]
     public int boxSize = 5;
     
@@ -279,7 +282,7 @@ public class MapGenerator : MonoBehaviour
       
       Box startingBox = boxes.FirstOrDefault(box => box.roomNumber == startingRoom);
       
-      startingBox.SpawnItem(tilelayer, player);
+      StageManager.Instance.Player = startingBox.SpawnItem(tilelayer, player).GetComponent<PlayerController>();
 
   }
 
@@ -287,9 +290,10 @@ public class MapGenerator : MonoBehaviour
 }
 
 
-public class Box : MonoBehaviour
+public class Box
 {
-    
+
+    public bool isPopulated = false;
     public int roomNumber;
     public int X;
     public int Y;
@@ -427,14 +431,14 @@ public class Box : MonoBehaviour
         
     }
 
-    public void SpawnItem(Tilemap tileLayer,  GameObject item)
+    public GameObject SpawnItem(Tilemap tileLayer,  GameObject item)
     {
        
         int posX = X * size + (int) Mathf.Ceil(size/2);
         int posY = Y * size + (int) Mathf.Ceil(size/2);
         Vector3Int spawnLocation = new Vector3Int (posX, posY, 0);
-        
-        Instantiate(item, spawnLocation, Quaternion.identity);
+
+        return GameObject.Instantiate(item, spawnLocation, Quaternion.identity);
         
     }
     
