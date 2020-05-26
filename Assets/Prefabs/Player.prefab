@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 1127391960459468358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.87, y: 5.62, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1505107211282584294}
   - {fileID: 1505107210961835331}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d6f660b9c49f83439da9dc8bf3c8f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 3
   RotationSpeed: 100
   healthController: {fileID: 1505107210802011939}
   melee: {fileID: 1505107210961835331}

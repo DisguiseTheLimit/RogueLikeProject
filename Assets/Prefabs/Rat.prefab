@@ -128,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 3709497755130585211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.86, y: 8.44, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 3709497753156676489}
   m_Father: {fileID: 0}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
-  delay: 0.2
+  delay: 0.6
   damageDelayTime: 2
   meleeDelayTime: 0.2
   damage: 1
@@ -294,7 +294,7 @@ MonoBehaviour:
   delay: 0.2
   damageDelayTime: 2
   meleeDelayTime: 0.2
-  speed: 3.5
+  speed: 1.75
   maxRange: 5
   minRange: 1.1
 --- !u!95 &4476469919337178881
