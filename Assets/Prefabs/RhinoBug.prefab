@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 8985429975096547977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.41, y: 8.711, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 8985429976468727758}
   m_Father: {fileID: 0}
@@ -78,8 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 1951679541
   m_SortingLayer: -3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7018356247088339662, guid: aa2a3ad2cdd0ca94398874fb3edfa766,
-    type: 3}
+  m_Sprite: {fileID: 338968971499613336, guid: 88d2e13f865157b428f217f0ada024cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,18 +102,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00000047683716, y: -0.071453094}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.9, y: 4.37}
+    oldSize: {x: 1.8, y: 1.6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.9, y: 4.37}
+  m_Size: {x: 1.6647291, y: 1.1091003}
   m_EdgeRadius: 0
 --- !u!114 &4163723168856832648
 MonoBehaviour:
@@ -233,7 +232,7 @@ MonoBehaviour:
   damage: 5
   health: 50
   maxHealth: 50
-  delay: 0.5
+  delay: 4
   damageDelayTime: 2
   meleeDelayTime: 0.2
   speed: 0.5
@@ -265,8 +264,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8985429976468727759}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.79, y: 2.77, z: 0}
-  m_LocalScale: {x: 3, y: 0.5, z: 0}
+  m_LocalPosition: {x: -0.91, y: 0.94, z: 0}
+  m_LocalScale: {x: 2, y: 0.5, z: 0}
   m_Children: []
   m_Father: {fileID: 8985429975096547986}
   m_RootOrder: 0
@@ -334,4 +333,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAITest: {fileID: 8985429975096547985}
-  healthLength: 3
+  healthLength: 2
